@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { Routes, RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from 'src/app/services/auth.interceptor';
 import { ServicesModule } from 'src/app/services/services.module';
 import { AuthModule } from 'src/app/auth/auth.module';
+
+export const ROUTES: Routes = [
+  // { path: '', pathMatch: 'full', component: AppComponent },
+  // { path: 'question',  },
+];
 
 @NgModule({
   declarations: [
@@ -15,10 +18,10 @@ import { AuthModule } from 'src/app/auth/auth.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     ServicesModule,
     AuthModule,
+    RouterModule.forRoot(ROUTES),
   ],
   providers: [
     {
