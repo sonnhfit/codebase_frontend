@@ -21,7 +21,8 @@ export class AuthenticationService {
 
     login(username: string, password: string) {
         console.log(`${environment.apiUrl}/user/login/`);
-        return this.http.post<any>(`${environment.apiUrl}/user/login/`, JSON.stringify({ 'username': username, 'password': password }))
+        return this.http.post<any>(`${environment.apiUrl}/user/login/`,
+        JSON.stringify({ 'username': username, 'password': password }))
         .subscribe(
             data => {
                 localStorage.setItem('access_token', data['access_token']);

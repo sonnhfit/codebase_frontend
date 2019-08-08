@@ -6,6 +6,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from 'src/app/services/auth.interceptor';
 import { ServicesModule } from 'src/app/services/services.module';
 import { AuthModule } from 'src/app/auth/auth.module';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 export const ROUTES: Routes = [
   // { path: '', pathMatch: 'full', component: AppComponent },
@@ -14,7 +17,9 @@ export const ROUTES: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
