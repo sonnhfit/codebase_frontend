@@ -9,10 +9,12 @@ import { AuthModule } from 'src/app/auth/auth.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './auth/login/login.component';
+import { UserModule } from 'src/app/user/user.module';
 
 export const ROUTES: Routes = [
   // { path: '', pathMatch: 'full', component: AppComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'users', loadChildren: './user/user.module#UserModule' },
 ];
 
 @NgModule({
@@ -25,8 +27,10 @@ export const ROUTES: Routes = [
     BrowserModule,
     HttpClientModule,
     ServicesModule,
+
     AuthModule,
     RouterModule.forRoot(ROUTES),
+
   ],
   providers: [
     {
