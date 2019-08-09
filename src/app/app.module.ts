@@ -8,11 +8,11 @@ import { ServicesModule } from 'src/app/services/services.module';
 import { AuthModule } from 'src/app/auth/auth.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { LoginComponent } from './auth/login/login.component';
 
 export const ROUTES: Routes = [
   // { path: '', pathMatch: 'full', component: AppComponent },
-  // { path: 'question',  },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
