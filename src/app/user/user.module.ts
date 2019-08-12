@@ -4,6 +4,7 @@ import { UserAddComponent } from './user-add/user-add.component';
 import { UserHistoryComponent } from './user-history/user-history.component';
 import { Routes, RouterModule } from '@angular/router';
 import {WebcamModule} from 'ngx-webcam';
+import { FormsModule } from '@angular/forms';
 
 export const ROUTES: Routes = [
   { path: 'add', component: UserAddComponent },
@@ -17,6 +18,7 @@ export const ROUTES: Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
     WebcamModule,
     RouterModule.forChild(ROUTES),
   ]

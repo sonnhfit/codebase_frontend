@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {WebcamImage, WebcamInitError, WebcamUtil} from 'ngx-webcam';
-import {Subject} from 'rxjs';
+import {Subject, fromEventPattern} from 'rxjs';
 import {Observable} from 'rxjs';
+import { ImagesService } from '../../services/images.service';
 
 @Component({
   selector: 'app-user-add',
@@ -17,6 +18,7 @@ export class UserAddComponent implements OnInit {
     // width: {ideal: 1024},
     // height: {ideal: 576}
   };
+  public user_id: number = 0;
   public errors: WebcamInitError[] = [];
   public list_image: any[] = [];
   public webcamImage: WebcamImage = null;
@@ -26,7 +28,7 @@ export class UserAddComponent implements OnInit {
   // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
   private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
-  constructor() { }
+  constructor(private _imageservices: ImagesService) { }
 
   ngOnInit() {
     WebcamUtil.getAvailableVideoInputs()
@@ -35,8 +37,6 @@ export class UserAddComponent implements OnInit {
       });
   }
   public triggerSnapshot(): void {
-    
-    
     this.trigger.next();
     this.list_image.push(this.webcamImage.imageAsDataUrl);
   }
@@ -74,5 +74,23 @@ export class UserAddComponent implements OnInit {
     return this.nextWebcam.asObservable();
   }
 
+  public submitImage() {
+    for (let item of this.list_image) {
+        this._imageservices.upload_base64_image({'img': item, 'user_id': this.user_id})
+        .subscribe(
 
+          data => {
+            this.list_image.splice(0, 1);
+          },
+          err => {
+            console.error('refresh error', err);
+          }
+
+      );
+    }
+    
+  }
+  public removeItem(event, item) {
+    this.list_image.splice(item, 1);
+  }
 }
