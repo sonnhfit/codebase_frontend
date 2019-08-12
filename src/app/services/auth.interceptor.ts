@@ -18,7 +18,8 @@ export class AuthInterceptor implements HttpInterceptor {
                     'Content-Type' : 'application/json; charset=utf-8',
                     'Accept'       : 'application/json',
                 },
-                });
+            });
+            console.log(req);
         }
 
         return next.handle(req);
