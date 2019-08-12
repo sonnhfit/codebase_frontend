@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { UserAddComponent } from './user-add/user-add.component';
 import { UserHistoryComponent } from './user-history/user-history.component';
 import { Routes, RouterModule } from '@angular/router';
+import {WebcamModule} from 'ngx-webcam';
 
 export const ROUTES: Routes = [
   { path: 'add', component: UserAddComponent },
@@ -16,6 +17,7 @@ export const ROUTES: Routes = [
   ],
   imports: [
     CommonModule,
+    WebcamModule,
     RouterModule.forChild(ROUTES),
   ]
 })

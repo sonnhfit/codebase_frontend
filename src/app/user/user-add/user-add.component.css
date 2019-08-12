@@ -1,0 +1,49 @@
+.camera{
+    padding: 10px;
+}
+
+#pwd2{
+    margin-left: 10px;
+}
+.camera img{
+    width: 100%;
+}
+
+.height-body{
+  margin-bottom: 20px;
+}
+.container-img {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    margin: 5px;
+  }
+  
+  .container-img img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .container-img .btn-delete {
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #DC3544;
+    color: white;
+    font-size: 13px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .container-img .btn-delete:hover {
+    background-color: #b71423fc;
+  }
+
+  .camera{
+    border: #ccc;
+  }

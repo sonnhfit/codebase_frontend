@@ -10,9 +10,34 @@
               <label for="pwd">Email:</label>
               <input type="password" class="form-control" id="pwd">
             </div>
+            <div class="form-group">
+                <button (click)="triggerSnapshot();" class="btn btn-primary" value="" id="pwd">Take Photo</button>
+                <input type="button" class="btn btn-primary" value="submit" id="pwd2">
+                
+               
+            </div>
       </div>
       <div class="col-md-6 col-xs-6">
-          right
+        <div class="camera">
+            <webcam [height]="400" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+            [videoOptions]="videoOptions"
+            [imageQuality]="1"
+            (cameraSwitched)="cameraWasSwitched($event)"
+            (initError)="handleInitError($event)"
+        ></webcam>
+          
+
+        </div>
       </div>
   </div>
+  <div class="row height-body" *ngIf="webcamImage">
+    <ng-container *ngFor="let item of list_image">
+        <div class="container-img col-md-3" >
+            <img [src]="item" alt="Snow" style="width:100%">
+            <button class="btn-delete">delete</button>
+        </div>
+    </ng-container>
+  </div>
+
 </div>
