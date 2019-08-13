@@ -5,6 +5,7 @@ import { UserHistoryComponent } from './user-history/user-history.component';
 import { Routes, RouterModule } from '@angular/router';
 import {WebcamModule} from 'ngx-webcam';
 import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
 
 export const ROUTES: Routes = [
   { path: 'add', component: UserAddComponent },
@@ -19,6 +20,7 @@ export const ROUTES: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ChartsModule,
     WebcamModule,
     RouterModule.forChild(ROUTES),
   ]

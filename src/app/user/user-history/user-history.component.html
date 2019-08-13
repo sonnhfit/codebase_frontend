@@ -1,3 +1,10 @@
-<p>
-  user-history works!
-</p>
+<div class="char-bar" style="display: block;">
+  <canvas baseChart 
+    [datasets]="barChartData"
+    [labels]="barChartLabels"
+    [options]="barChartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType">
+  </canvas>
+</div>

@@ -10,7 +10,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './auth/login/login.component';
 
-
 export const ROUTES: Routes = [
   // { path: '', pathMatch: 'full', component: AppComponent },
   { path: 'login', component: LoginComponent },
