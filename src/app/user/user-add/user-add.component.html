@@ -1,23 +1,44 @@
 <div class="container">
   <div class="row">
       <div class="col-md-6 col-xs-6">
-          <div class="form-group">
-              <br>
-              <label for="usr">ID User:</label>
-              <input [(ngModel)]="user_id"  type="number" class="form-control" >
-            </div>
-            <div class="form-group">
-              <label for="pwd">Name:</label>
-              <input type="text" class="form-control" id="pwd">
-            </div>
-            <div class="form-group">
-                <button (click)="triggerSnapshot();" class="btn btn-primary" value="" id="pwd">Take Photo</button>
-                <button (click)="submitImage();" class="btn btn-primary"  id="pwd2">Submit</button>
+          <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">Staff information</h3>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">user id</label>
+                    <input type="text" [(ngModel)]="user_id" class="form-control" name="exampleInputEmail1" placeholder="user id">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Name</label>
+                    <input type="text" class="form-control" name="exampleInputPassword1" placeholder="staff name">
+                  </div>
+                  <div *ngIf="message" style="color: green;"> Train oke</div>
+                </div>
+                <!-- /.box-body -->
+  
+                <div class="box-footer">
+                    <button (click)="triggerSnapshot();" class="btn btn-app" value="" id="pwd">
+                      <i class="fa fa-camera-retro"></i>
+                      Take Photo
+                    </button>
+                    <button (click)="submitImage();" class="btn btn-app"  id="pwd2">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                        Submit</button>
+                    <button (click)="trainModel()" class="btn btn-app">
+                      <i class="fa fa-play"></i> Train
+                    </button>
+                </div>
+              </form>
             </div>
       </div>
       <div class="col-md-6 col-xs-6">
         <div class="camera">
-          <webcam [height]="400" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+          <webcam [height]="400" [width]="400" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
             [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
             [videoOptions]="videoOptions"
             [imageQuality]="1"
@@ -27,12 +48,46 @@
         </div>
       </div>
   </div>
+  <div class="row">
+      <div class="col">
+          <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">Video upload</h3>
+              </div>
+              <!-- /.box-header -->
+              <!-- form start -->
+              <form role="form">
+                <div class="box-body">
+ 
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Name</label>
+                    <input type="file" class="form-control" name="exampleInputPassword1" placeholder="video ">
+                  </div>
+                </div>
+                <!-- /.box-body -->
+  
+                <div class="box-footer">
+                    <button (click)="triggerSnapshot();" class="btn btn-app" value="" id="pwd">
+                      <i class="fa fa-upload"></i>
+                      Upload Video
+                    </button>
+                </div>
+              </form>
+            </div>
+      </div>
+  </div>
   <div class="row height-body" *ngIf="webcamImage">
     <ng-container *ngFor="let item of list_image; let i = index" [attr.data-index]="i">
         <div class="container-img col-md-3" >
             <img [src]="item" alt="Snow" style="width:100%">
-            <button (click)="removeItem($event, i)" class="btn-delete">delete</button>
+            <button (click)="removeItem($event, i)" class="btn-delete">
+                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                delete
+            </button>
         </div>
     </ng-container>
+  </div>
+  <div class="row" style="height: 100px">
+
   </div>
 </div>

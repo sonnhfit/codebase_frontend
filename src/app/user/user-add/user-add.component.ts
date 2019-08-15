@@ -18,11 +18,11 @@ export class UserAddComponent implements OnInit {
     // width: {ideal: 1024},
     // height: {ideal: 576}
   };
-  public user_id: number = 0;
+  public user_id: string = null;
   public errors: WebcamInitError[] = [];
   public list_image: any[] = [];
   public webcamImage: WebcamImage = null;
-
+  public message = false;
   // webcam snapshot trigger
   private trigger: Subject<void> = new Subject<void>();
   // switch to next / previous / specific webcam; true/false: forward/backwards, string: deviceId
@@ -93,4 +93,19 @@ export class UserAddComponent implements OnInit {
   public removeItem(event, item) {
     this.list_image.splice(item, 1);
   }
+
+  public trainModel() {
+    this._imageservices.train_model()
+    .subscribe(
+
+      data => {
+        this.message = data['success'];
+      },
+      err => {
+        console.error('refresh error', err);
+      }
+
+  );
+  }
+
 }

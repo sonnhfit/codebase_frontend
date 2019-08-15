@@ -1,0 +1,58 @@
+.box-widget {
+    border: none;
+    position: relative;
+}
+
+.widget-user-2 .widget-user-header {
+    padding: 20px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.bg-yellow, .callout.callout-warning, .alert-warning, .label-warning, .modal-warning .modal-body {
+    background-color: #f39c12 !important;
+}
+
+.widget-user-2 .widget-user-image>img {
+    width: 65px;
+    height: auto;
+    float: left;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+
+.widget-user-2 .widget-user-username, .widget-user-2 .widget-user-desc {
+    margin-left: 75px;
+}
+
+.widget-user-2 .widget-user-username {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+
+
+.btn-app {
+    border-radius: 3px;
+    position: relative;
+    padding: 15px 5px;
+    margin: 0 0 10px 10px;
+    min-width: 80px;
+    height: 60px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    font-size: 12px;
+}
+

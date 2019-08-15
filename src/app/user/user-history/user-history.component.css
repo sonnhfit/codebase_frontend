@@ -10,8 +10,6 @@
 }
 
 
-
-
 .box-header .box-title {
     display: inline-block;
     font-size: 18px;
@@ -67,4 +65,19 @@
     position: absolute;
     right: 10px;
     top: 5px;
+}
+
+
+.btn-app {
+    border-radius: 3px;
+    position: relative;
+    padding: 15px 5px;
+    margin: 0 0 10px 10px;
+    min-width: 80px;
+    height: 60px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ddd;
+    background-color: #234;
+    font-size: 12px;
 }

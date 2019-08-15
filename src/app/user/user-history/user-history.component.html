@@ -67,12 +67,21 @@
               <h3 class="box-title">Lịch sử ra vào</h3>
             </div>
           <div class=" box-body">
-
+              <div style="display: block;">
+                  <canvas baseChart 
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [legend]="lineChartLegend"
+                    [chartType]="lineChartType"
+                    [plugins]="lineChartPlugins">
+                  </canvas>
+                </div>
           </div>
           <div class="box-footer">
           </div>
       </div>
- 
     </div>
   </div>
   <div class="row">
@@ -111,7 +120,7 @@
       <div class="col-md-4">
           <div class="box">
               <div class="box-header with-border">
-                  <h3 class="box-title">Monthly Recap Report</h3>
+                  <h3 class="box-title">Name: </h3>
 
                 </div>
               <div class="content-div box-body"></div>

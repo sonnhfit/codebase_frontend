@@ -22,4 +22,18 @@ export class ImagesService {
     return this.http.post<any>(`${environment.apiUrl}/upload-base64/`, JSON.stringify(mydic), this.httpOptions);
   }
 
+  public predict_image(formData) {
+    let httpOptions2 = {
+      headers: new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem('access_token')}`
+      })
+      };
+    
+    return this.http.post(`${environment.apiUrl}/predict/`, formData, httpOptions2);
+  }
+
+  public train_model() {
+    return this.http.post(`${environment.apiUrl}/train/`, '', this.httpOptions);
+  }
+
 }
